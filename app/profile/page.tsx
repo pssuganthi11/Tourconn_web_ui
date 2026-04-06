@@ -12,8 +12,9 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#D1D5DB] pt-32 pb-12 px-6 flex items-center justify-center">
+    <div className="min-h-screen pt-32 pb-12 px-6 flex items-center justify-center bg-white">
       <div className="max-w-6xl w-full mx-auto">
+        
         {/* Page Title */}
         <h1 className="text-4xl font-extrabold italic text-black mb-12 ml-2">
           Profile
@@ -24,7 +25,7 @@ const ProfilePage = () => {
           
           {/* Left Side: Profile Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-[450px] h-[350px] md:h-[450px] rounded-[60px] overflow-hidden shadow-2xl bg-gray-400">
+            <div className="relative w-full max-w-[450px] h-[350px] md:h-[450px] rounded-[60px] overflow-hidden shadow-2xl bg-gray-200">
               <Image
                 src="/img/women.png"
                 alt="Profile"
@@ -38,41 +39,43 @@ const ProfilePage = () => {
 
           {/* Right Side: Info Card */}
           <div className="w-full lg:w-1/2 flex flex-col gap-8">
-            {/* Main Info Box */}
-            <div className="bg-[#CBD5E1] rounded-[50px] p-8 md:p-16 shadow-inner flex flex-col justify-center min-h-[420px]">
+            
+            <div className="bg-[#CBD5E1]/50 rounded-[50px] p-8 md:p-16 shadow-sm flex flex-col justify-center min-h-[420px] border border-gray-100">
               <div className="space-y-10">
-                <div className="flex items-start gap-6">
+                
+                <div className="flex items-center gap-6">
                   <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Name :</span>
                   <span className="font-bold italic text-black text-lg">suganthi</span>
                 </div>
 
-                <div className="flex items-start gap-6">
+                <div className="flex items-center gap-6">
                   <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Email :</span>
-                  <span className="font-bold italic text-black text-lg break-all">pssuganthi11@gmail.com</span>
+                  <span className="font-bold italic text-black text-lg break-all underline decoration-gray-400">pssuganthi11@gmail.com</span>
                 </div>
 
-                <div className="flex items-start gap-6">
+                <div className="flex items-center gap-6">
                   <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Ph.No :</span>
                   <span className="font-bold italic text-black text-lg">9878543210</span>
                 </div>
 
-                <div className="flex items-start gap-6">
+                <div className="flex items-center gap-6">
                   <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Location :</span>
                   <span className="font-bold italic text-black text-lg">Tamil nadu</span>
                 </div>
               </div>
             </div>
 
-            {/* Logout Button */}
-            <div className="flex justify-end">
+            {/* Logout*/}
+            <div className="flex justify-center w-full">
               <button
                 onClick={handleLogout}
-                className="bg-[#EF4444] hover:bg-red-700 text-white px-16 py-4 rounded-2xl font-bold transition-all active:scale-95 shadow-lg text-sm uppercase tracking-widest"
+                className="bg-[#EF4444] hover:bg-red-700 text-white px-20 py-4 rounded-2xl font-bold transition-all active:scale-95 shadow-lg shadow-red-200 text-sm uppercase tracking-widest"
               >
                 Logout
               </button>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
