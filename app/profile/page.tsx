@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Mail, Phone, MapPin, LogOut } from "lucide-react";
 
 const ProfilePage = () => {
   const router = useRouter();
@@ -12,71 +12,82 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-12 px-6 flex items-center justify-center bg-white">
-      <div className="max-w-6xl w-full mx-auto">
+    <div className="min-h-screen pt-20 pb-12 px-4 flex flex-col items-center justify-center bg-gray-50/50">
+      <div className="w-full max-w-4xl space-y-6">
         
-        {/* Page Title */}
-        <h1 className="text-4xl font-extrabold italic text-black mb-12 ml-2">
-          Profile
-        </h1>
-
-        {/* Responsive Grid */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
+        {/* --- Header Card --- */}
+        <div className="bg-white rounded-[2rem] shadow-sm border border-gray-100 overflow-hidden">
+          {/* Top colored bar */}
+          <div className="h-24 bg-[#f1f5f5]" />
           
-          {/* Left Side: Profile Image */}
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-[450px] h-[350px] md:h-[450px] rounded-[60px] overflow-hidden shadow-2xl bg-gray-200">
-              <Image
-                src="/img/women.png"
-                alt="Profile"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 450px"
-                className="object-cover"
-              />
+          <div className="px-8 pb-8 flex flex-col items-center -mt-12">
+            {/* Profile Avatar */}
+            <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-md border-4 border-white mb-4">
+              <div className="w-full h-full rounded-full bg-[#f1f5f5] flex items-center justify-center text-[#1a706d] text-3xl font-bold">
+                S
+              </div>
             </div>
-          </div>
-
-          {/* Right Side: Info Card */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-8">
             
-            <div className="bg-[#CBD5E1]/50 rounded-[50px] p-8 md:p-16 shadow-sm flex flex-col justify-center min-h-[420px] border border-gray-100">
-              <div className="space-y-10">
-                
-                <div className="flex items-center gap-6">
-                  <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Name :</span>
-                  <span className="font-bold italic text-black text-lg">suganthi</span>
-                </div>
+            <h1 className="text-2xl font-bold text-gray-900">Suganthi</h1>
+            <p className="text-gray-500 font-medium">
+              <span className="text-[#1a706d]">user:</span> USE0001
+            </p>
+          </div>
+        </div>
 
-                <div className="flex items-center gap-6">
-                  <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Email :</span>
-                  <span className="font-bold italic text-black text-lg break-all underline decoration-gray-400">pssuganthi11@gmail.com</span>
-                </div>
+        {/* --- Information Card --- */}
+        <div className="bg-white rounded-[2rem] shadow-sm border border-gray-100 p-8 md:p-12">
+          <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">
+            Personal Information
+          </h2>
 
-                <div className="flex items-center gap-6">
-                  <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Ph.No :</span>
-                  <span className="font-bold italic text-black text-lg">9878543210</span>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <span className="font-bold italic text-black min-w-[110px] text-lg uppercase">Location :</span>
-                  <span className="font-bold italic text-black text-lg">Tamil nadu</span>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Email Address */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-gray-400">
+                <Mail size={16} />
+                <span className="text-[10px] font-bold uppercase tracking-wider">Email Address</span>
+              </div>
+              <div className="bg-gray-50/80 p-4 rounded-2xl text-gray-700 font-medium border border-gray-50">
+                user@tourconn.com
               </div>
             </div>
 
-            {/* Logout*/}
-            <div className="flex justify-center w-full">
-              <button
-                onClick={handleLogout}
-                className="bg-[#EF4444] hover:bg-red-700 text-white px-20 py-4 rounded-2xl font-bold transition-all active:scale-95 shadow-lg shadow-red-200 text-sm uppercase tracking-widest"
-              >
-                Logout
-              </button>
+            {/* Phone Number */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-gray-400">
+                <Phone size={16} />
+                <span className="text-[10px] font-bold uppercase tracking-wider">Phone Number</span>
+              </div>
+              <div className="bg-gray-50/80 p-4 rounded-2xl text-gray-700 font-medium border border-gray-50">
+                +91 90876 54321
+              </div>
+            </div>
+
+            {/* Office Location */}
+            <div className="space-y-3 md:col-span-1">
+              <div className="flex items-center gap-2 text-gray-400">
+                <MapPin size={16} />
+                <span className="text-[10px] font-bold uppercase tracking-wider">Office Location</span>
+              </div>
+              <div className="bg-gray-50/80 p-4 rounded-2xl text-gray-700 font-medium border border-gray-50">
+                Salem, Tamil Nadu
+              </div>
             </div>
           </div>
-          
+
+          {/* Logout Button */}
+          <div className="mt-12 flex justify-end">
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 bg-red-50 text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-red-100 transition-colors"
+            >
+              <LogOut size={18} />
+              Logout
+            </button>
+          </div>
         </div>
+        
       </div>
     </div>
   );
