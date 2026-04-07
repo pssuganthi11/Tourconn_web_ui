@@ -16,23 +16,36 @@ const CategoryFilter = ({ selected, onSelect }: CategoryFilterProps) => {
           Select a category to filter packages
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          {categories.map((cat) => {
-            const isActive = selected === cat.id;
+          {categories.map((cato) => {
+            const isActive = selected === cato.id;
             return (
               <button
-                key={cat.id}
-                onClick={() => onSelect(isActive ? null : cat.id)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium transition-all border
+                key={cato.id}
+                onClick={() => onSelect(isActive ? null : cato.id)}
+                style={{
+                  backgroundImage: `url(${cato.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                className={`relative flex flex-col items-center justify-end w-40 h-48 p-4 rounded-2xl transition-all duration-300 overflow-hidden 
                   ${
                     isActive
-                      ? "border-primary bg-primary/10 text-primary shadow-sm"
-                      : "border-border bg-card text-foreground hover:border-primary/40 hover:shadow-sm"
+                      ? "border-[#1a706d] scale-105 shadow-xl"
+                      : "shadow-2xl  hover:scale-102"
                   }
-                `}
-                style={isActive ? { boxShadow: "var(--search-shadow)" } : undefined}
+                           `}
               >
-                <span className="text-lg">{cat.icon}</span>
-                {cat.label}
+                {isActive && (
+                  <div className="absolute inset-0 bg-[#1a706d]/20 pointer-events-none" />
+                )}
+
+                <div className="relative z-10 flex flex-col items-center gap-1">
+                  <span
+                    className={`text-sm font-bold drop-shadow-md text-white`}
+                  >
+                    {cato.label}
+                  </span>
+                </div>
               </button>
             );
           })}

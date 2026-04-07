@@ -22,7 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     if (role === "user") {
-      router.replace("/dashboard");
+      router.replace("/packageList");
     } else if (role === "vendor") {
       router.replace("/vendor/dashboard");
     } else if (role === "admin") {
@@ -68,10 +68,6 @@ export default function Home() {
 
     return result;
   }, [destination, date, travelers, selectedCategory, hasSearched]);
-
-  if (role !== "guest" && role !== null) {
-    return <div className="min-h-screen bg-white" />; 
-  }
 
   return (
     <div className="flex flex-col gap-0">

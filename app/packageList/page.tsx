@@ -116,7 +116,7 @@ const AllPackagesPage = () => {
                 placeholder="Where do you want to go?"
                 value={destinationSearch}
                 onChange={(e) => setDestinationSearch(e.target.value)}
-                className="w-full p-5 pl-14 bg-white shadow-xl border-none rounded-2xl outline-none focus:ring-2 ring-[#7C3AED] transition-all"
+                className="w-full p-5 pl-14 bg-white shadow-xl border-none rounded-2xl outline-none focus:ring-2 ring-[#1a706d] transition-all"
               />
               <Search
                 className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"
@@ -127,7 +127,7 @@ const AllPackagesPage = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* --- Sidebar: PREMIUM FILTERS (Logged In Only) --- */}
+          {/*  Sidebar: premium loggedin user for */}
           {isLoggedIn && (
             <aside className="w-full lg:w-64 space-y-10 animate-in fade-in slide-in-from-left-4 duration-500">
               {/* Search in Sidebar */}
@@ -200,7 +200,7 @@ const AllPackagesPage = () => {
 
           {/* --- Main Grid Area --- */}
           <div className="flex-1">
-            {/* Sort Dropdown (Logged In Only) */}
+            {/* Sort Dropdown loggedin user for */}
             {isLoggedIn && (
               <div className="flex justify-end mb-8">
                 <div className="relative group">
@@ -270,16 +270,25 @@ const AllPackagesPage = () => {
                             Starting at
                           </p>
                           <p className="text-2xl font-bold text-[#1a706d]">
-                            ${pkg.price}
+                          ₹{pkg.price}
                           </p>
                         </div>
                       </div>
-                      <Link
+                        {isLoggedIn ? (<Link
                         href={`/packageList/${pkg.id}`}
                         className="text-xs font-bold text-[#1a706d] text-center underline hover:text-[#5b2ab3] transition-colors"
                       >
                         View Details
+                      </Link>):(
+                        <Link
+                        href={`/auth/login`}
+                        className="text-xs font-bold text-[#1a706d] text-center underline hover:text-[#5b2ab3] transition-colors"
+                      >
+                        View Details
                       </Link>
+                      )}
+                      
+
                     </div>
                   </div>
                 ))}

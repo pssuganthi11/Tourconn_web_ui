@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t-2 mt-10 pt-6 text-center border-[#1a706d]">
+        <div className=" mt-10 pt-6 text-center ">
           <p className="text-xs text-gray-400">
             © 2026 Tourconn Pvt Ltd. All rights reserved.
           </p>
