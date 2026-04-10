@@ -16,7 +16,7 @@ const HeroSection = ({
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center px-4 font-mono italic">
       <Image src={heroImage} alt="Hero" fill className="object-cover" priority />
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 w-full max-w-5xl text-center text-white">
         <h1 className="text-3xl md:text-5xl font-bold ">
@@ -24,7 +24,7 @@ const HeroSection = ({
           <span className="text-[#1a706d] font-mono italic">Tourconn</span>
         </h1>
 
-        <div className="mt-6 bg-white/80 rounded-xl p-4 text-black">
+        <div className="mt-6 bg-white/40 rounded-xl p-4 text-black">
           <div className="flex flex-col md:flex-row gap-3">
             
             <input
