@@ -166,7 +166,7 @@ const RegisterPage = () => {
               </div>
             </div>
 
-            {/* Role Selection */}
+            {/* Role Selection
             <div>
               <label className="mb-2 block text-xs text-gray-500">
                 Select Role
@@ -196,7 +196,7 @@ const RegisterPage = () => {
                   Vendor
                 </label>
               </div>
-            </div>
+            </div> */}
 
             {/* Button */}
             <button
